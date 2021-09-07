@@ -10,7 +10,7 @@
 % May 2005 Patrick Carlisle Table of contents chapter definition
 % 2004-2005 Ben Salzberg (BTS) a variety of tweaks here and in the template
 % 2015 Chester Ismay (CII) modified to create R Markdown template
-%
+% 2020 Sebastian Hoyos-Torres (SH) modify CII edits for graduate center rmd template
 % Oddities:
 %
 %   We *ASSUME* that any time \cleardoublepage is called
@@ -24,7 +24,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{reedthesis}[2004/01/27 The Reed College Thesis Class]
+\ProvidesClass{gcdown}[graduate center thesis]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
 \LoadClass{book}
@@ -104,24 +104,24 @@
 % This gives us rules below the headers
 \AtBeginDocument{%
   \fancyhf{}
-  \fancyhead[LE,RO]{\thepage}
+%  \fancyhead[LE,RO]{\thepage}
 %  \fancyhead[RE]{\slshape \leftmark}
 %  \fancyhead[LO]{\slshape \rightmark}
 %	The above makes your headers in all caps. If you would like different headers, choose one of the following options (be sure to remove the % symbol from both the right and left headers):
-	 \fancyhead[RE]{\slshape \nouppercase \leftmark} % This makes the headers on the RIGHT side pages be italic and use lowercase With Capitals When Specified.
-	\fancyhead[LO]{\slshape \nouppercase \rightmark} % This does the same thing to the LEFT side pages
+%	 \fancyhead[RE]{\slshape \nouppercase \leftmark} % This makes the headers on the RIGHT side pages be italic and use lowercase With Capitals When Specified.
+%	\fancyhead[LO]{\slshape \nouppercase \rightmark} % This does the same thing to the LEFT side pages
 %	or
 %	\fancyhead[RE]{\scshape \leftmark} % The RIGHT headers will be in small caps.
 %	\fancyhead[LO]{\scshape \rightmark} %  And so will the LEFT headers
   \pagestyle{fancy}
 
 % Psych majors: You do not need the following six lines, as it conflicts with apacite, so comment them out.
-  \let\oldthebibliography=\thebibliography
-  \let\endoldthebibliography=\endthebibliography
-  \renewenvironment{thebibliography}[1]{
-    \oldthebibliography{#1}
-    \addcontentsline{toc}{chapter}{\bibname}
-  }{\endoldthebibliography}
+%  \let\oldthebibliography=\thebibliography
+%  \let\endoldthebibliography=\endthebibliography
+%  \renewenvironment{thebibliography}[1]{
+%    \oldthebibliography{#1}
+%    \addcontentsline{toc}{chapter}{\bibname}
+%  }{\endoldthebibliography}
  %%%%%% end of things for psych majors to comment out
 
   \let\oldtheindex=\theindex
@@ -135,8 +135,7 @@
 % Stolen from book.cls and modified
 \let\RToldchapter\chapter
 \renewcommand{\chapter}{\if@openright\RTcleardoublepage
-		    \else\clearpage\fi
-		    \thispagestyle{empty}%
+		    \else\cleardoublepage\fi
 		    \global\@topnum\z@
 		    \@afterindentfalse
 		    \secdef\@chapter\@schapter}
@@ -146,7 +145,7 @@
 \def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
                        \if@mainmatter
                          \refstepcounter{chapter}%
-                         \typeout{\@chapapp\space\thechapter.}%
+                      \typeout{\@chapapp\space\thechapter.}%
                          \addcontentsline{toc}{chapter}%
                          {\@chapapp\space\thechapter:\space#1}%
                        \else
@@ -174,7 +173,7 @@
 \renewcommand{\cleardoublepage}{\RTcleardoublepage}
 
 % adjust margins for binding  (changed 2007-04-24 tgp)
-\setlength{\oddsidemargin}{.5in}
+\setlength{\oddsidemargin}{0in}
 \setlength{\evensidemargin}{0in}
 \setlength{\textwidth}{6.0in}
 \setlength{\textheight}{9.0in}
@@ -210,7 +209,6 @@
 \global\let\@altadvisor\@empty
 \newif\if@altadvisor
 \@altadvisorfalse
-
 \renewcommand\l@chapter[2]{%
   \ifnum \c@tocdepth >\m@ne
     \addpenalty{-\@highpenalty}%
@@ -284,64 +282,62 @@
 % as requested by the library, BTS 2005
 
 \renewcommand{\maketitle}{%
-  {\pagestyle{empty}
-  \fontsize{12}{14}\selectfont
+  {
+  \pagestyle{empty}
+  \fontsize{12}{14}
   \begin{titlepage}
-  \newpage
-  \let\footnotesize\small
-  \let\footnoterule\relax
-  \let \footnote \thanks
 
-  \baselineskip = 1.4\baselineskip
-  \setbox0=\hbox{of the Requirements for the Degree}
+\begin{center}
 
-  \begin{center}
-    \setcounter{page}{1}
-    \null\vfil
-    {\fontsize{12}{14}\selectfont \@title}
-    \vfil
-    \centerline{\hbox to \wd0 {\hbox{}\hrulefill\hbox{}}}
-    \vfil
-    A Thesis \\
-    Presented to \\
-    \@thedivisionof \ \@division \\
-    \@institution
-    \vfil
-    \centerline{\hbox to \wd0 {\hbox{}\hrulefill\hbox{}}}
-    \vfil
-    In Partial Fulfillment \\
-    of the Requirements for the Degree \\
-    \@degree
-    \vfil
-    \centerline{\hbox to \wd0 {\hbox{}\hrulefill\hbox{}}}
-    \bigskip
-    \centerline{}
-    \bigskip
-    {\fontsize{12}{14}\selectfont \lineskip .75em
-    \begin{tabular}[t]{c}%
-      \@author
-    \end{tabular}\par}
-    \vskip 1.5em
-    {\fontsize{12}{14}\selectfont \@date \par}
-  \end{center}\par
-  \end{titlepage}
+~\vspace{2in}
 
+\textsc{\@title} \\[0.5in]
+by \\[0.5in]
+\textsc{\@author} 
+
+\vspace{\fill}
+A dissertation proposal submitted to the Graduate Faculty in \@department \space in partial fulfillment of the requirements for the degree of \@degree, \@institution \\[0.25in]
+2020
+
+\end{center}
+
+\end{titlepage}
 %% Approved for the division page
-  \cleardoublepage
+  \clearpage
+\frontmatter
   {\fontsize{12}{14}
-  \setbox0=\hbox{Approved for the \@approvedforthe}
-  \thispagestyle{empty}
-  \null\vfil		% just below center of page
-  \par\vskip 6cm	% below center, not center
-  \centerline{\copy0}	% approved
-  \centerline{(\@department)} %major
-  \vskip 1cm		%space to sign
-  \centerline{\makebox[\wd0][c]{\hrulefill}
-	\if@altadvisor \makebox[.5in]{} \makebox[\wd0][c]{\hrulefill} \fi}
-  \centerline{\makebox[\wd0][c]{\@advisor}
-	\if@altadvisor \makebox[.5in]{} \makebox[\wd0][c]{\@altadvisor} \fi}
+  \begin{center}
+This manuscript has been read and accepted by the Graduate Faculty in \@department \space in satisfaction of the dissertation proposal requirement for the degree of \@degree.
+  \end{center}
+  \vspace{0.75in}
+
+\begin{tabular}{p{1.75in}p{0.5in}p{3.5in}}
+~                                   & & \textbf{\@advisor}\\
+~                                   & & \\
+\hrulefill                          & &\hrulefill \\
+Date                                & & Chair of Examining Committee\\
+~                                   & & \\
+~                                   & & \textbf{Deborah Koetzle}\\
+~                                   & & \\
+\hrulefill                          & &\hrulefill \\
+Date                                & & Executive Officer\\
+\end{tabular}
+\vspace{0.75in}
+
+\begin{tabular}{l}
+\textbf{\@advisor} \\
+Supervisory Committee \\
+\end{tabular}
+
   \par\vfil\null}
-  \cleardoublepage
+  \clearpage
+  \phantom{}\vspace{\fill}
+  \pagestyle{empty}
+\begin{center}
+\copyright~2020\\
+\textsc{\@author}\\
+All Rights Reserved\\
+\end{center}
   }
 }
 

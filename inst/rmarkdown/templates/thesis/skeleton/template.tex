@@ -1,34 +1,18 @@
-% This is the Reed College LaTeX thesis template. Most of the work
-% for the document class was done by Sam Noble (SN), as well as this
-% template. Later comments etc. by Ben Salzberg (BTS). Additional
-% restructuring and APA support by Jess Youngberg (JY).
-% Your comments and suggestions are more than welcome; please email
-% them to cus@reed.edu
-%
-% See https://www.reed.edu/cis/help/LaTeX/index.html for help. There are a
-% great bunch of help pages there, with notes on
-% getting started, bibtex, etc. Go there and read it if you're not
-% already familiar with LaTeX.
-%
-% Any line that starts with a percent symbol is a comment.
-% They won't show up in the document, and are useful for notes
-% to yourself and explaining commands.
-% Commenting also removes a line from the document;
-% very handy for troubleshooting problems. -BTS
-
-% As far as I know, this follows the requirements laid out in
-% the 2002-2003 Senior Handbook. Ask a librarian to check the
-% document before binding. -SN
-
-%%
+%% this template is a product mostly from the CUNY
+%% Graduate Center. However, there are numerous  other contributions
+%% that have made this possible.
 %% Preamble
 %%
-% \documentclass{<something>} must begin each LaTeX document
-\documentclass[12pt,twoside]{reedthesis}
+%% These have been added at the request of the MIT Libraries, because
+%% some PDF conversions mess up the ligatures.  -LB, 1/22/2014
+\documentclass[letterpaper, 12pt, oneside]{gcthesis}
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+
 % Packages are extensions to the basic LaTeX functions. Whatever you
 % want to typeset, there is probably a package out there for it.
 % Chemistry (chemtex), screenplays, you name it.
-% Check out CTAN to see: https://www.ctan.org/
+% Check out CTAN to see: http://www.ctan.org/
 %%
 \usepackage{graphicx,latexsym}
 \usepackage{amsmath}
@@ -41,19 +25,11 @@
 \usepackage{lmodern}
 \usepackage{float}
 \floatplacement{figure}{H}
-% Thanks, @Xyv
-\usepackage{calc}
 % End of CII addition
 \usepackage{rotating}
-
-% Next line commented out by CII
-%%% \usepackage{natbib}
-% Comment out the natbib line above and uncomment the following two lines to use the new
-% biblatex-chicago style, for Chicago A. Also make some changes at the end where the
-% bibliography is included.
-%\usepackage{biblatex-chicago}
-%\bibliography{thesis}
-
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage[margin = 1in, includehead, footskip=0.25in]{geometry}
 
 % Added by CII (Thanks, Hadley!)
 % Use ref for internal links
@@ -63,12 +39,20 @@
 \def\subsectionautorefname{Subsection}
 % End of CII addition
 
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=blue,
+	urlcolor=blue,
+}
+
 % Added by CII
 \usepackage{caption}
-\captionsetup{width=5in}
 % End of CII addition
-
-% \usepackage{times} % other fonts are available like times, bookman, charter, palatino
+\usepackage{times} % other fonts are available like times, bookman, charter, palatino
+% set spacing
+\usepackage{setspace}
+\doublespacing
 
 % Syntax highlighting #22
 $if(highlighting-macros)$
@@ -78,21 +62,14 @@ $endif$
 % To pass between YAML and LaTeX the dollar signs are added by CII
 \title{$title$}
 \author{$author$}
-% The month and year that you submit your FINAL draft TO THE LIBRARY (May or December)
 \date{$date$}
-\division{$division$}
+\department{$department$}
 \advisor{$advisor$}
 \institution{$institution$}
 \degree{$degree$}
 %If you have two advisors for some reason, you can use the following
 % Uncommented out by CII
-$if(altadvisor)$
-\altadvisor{$altadvisor$}
-$endif$
-% End of CII addition
 
-%%% Remember to use the correct department!
-\department{$department$}
 % if you're writing a thesis in an interdisciplinary major,
 % uncomment the line below and change the text as appropriate.
 % check the Senior Handbook if unsure.
@@ -100,6 +77,7 @@ $endif$
 % if you want the approval page to say "Approved for the Committee",
 % uncomment the next line
 %\approvedforthe{Committee}
+
 
 % Added by CII
 %%% Copied from knitr
@@ -114,43 +92,20 @@ $endif$
   \fi
 }
 \makeatother
-
-% From {rticles}
+%Added by @MyKo101, code provided by @GerbrichFerdinands
 $if(csl-refs)$
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
-% for Pandoc 2.8 to 2.10.1
 \newenvironment{cslreferences}%
   {$if(csl-hanging-indent)$\setlength{\parindent}{0pt}%
   \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces$endif$}%
   {\par}
-% For Pandoc 2.11+
-% As noted by @mirh [2] is needed instead of [3] for 2.12
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
-  % set entry spacing
-  \ifnum #2 > 0
-  \setlength{\parskip}{#2\baselineskip}
-  \fi
- }%
- {}
-\usepackage{calc} % for calculating minipage widths
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 $endif$
-
 \renewcommand{\contentsname}{Table of Contents}
 % End of CII addition
 
 \setlength{\parskip}{0pt}
-
+\setcounter{page}{2}
 % Added by CII
 $if(space_between_paragraphs)$
   %\setlength{\parskip}{\baselineskip}
@@ -160,21 +115,6 @@ $endif$
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-\Acknowledgements{
-$acknowledgements$
-}
-
-\Dedication{
-$dedication$
-}
-
-\Preface{
-$preface$
-}
-
-\Abstract{
-$abstract$
-}
 
 $for(header-includes)$
 	$header-includes$
@@ -184,16 +124,20 @@ $endfor$
 %% End Preamble
 %%
 %
-
 \begin{document}
 
-% Everything below added by CII
+% Everything below added by CII and SH
+
 $if(title)$
   \maketitle
 $endif$
 
-\frontmatter % this stuff will be roman-numbered
-\pagestyle{empty} % this removes page numbers from the frontmatter
+\frontmatter
+$if(abstract)$
+\begin{abstract}
+	$abstract$
+\end{abstract}
+$endif$
 
 $if(acknowledgements)$
   \begin{acknowledgements}
@@ -209,7 +153,6 @@ $endif$
 
 $if(toc)$
   \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
-  \setcounter{secnumdepth}{$toc-depth$}
   \setcounter{tocdepth}{$toc-depth$}
   \tableofcontents
 $endif$
@@ -222,25 +165,19 @@ $if(lof)$
   \listoffigures
 $endif$
 
-$if(abstract)$
-  \begin{abstract}
-    $abstract$
-  \end{abstract}
-$endif$
-
 $if(dedication)$
   \begin{dedication}
     $dedication$
   \end{dedication}
 $endif$
 
-\mainmatter % here the regular arabic numbering starts
-\pagestyle{fancyplain} % turns page numbering back on
-
+\mainmatter
+\pagestyle{fancyplain}
+\fancyhead[RO,RE]{\chaptername \space \thechapter: RUNNING HEAD}
+\fancyfoot[CO,CE]{\thepage}
 $body$
 
 
 % Index?
 
 \end{document}
-
