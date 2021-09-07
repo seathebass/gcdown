@@ -1,15 +1,17 @@
-Package: thesisdown
-Title: An updated R Markdown thesis template using the bookdown package
-Version: 0.2.0.9000
+Package: gcdown
+Title: An updated R Markdown Dissertation Template for the CUNY Graduate Center.
+Version: 0.2i.0.9000
 Authors@R: c(
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = c("cre", "aut")),
     person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"),
-    person("Shir", "Dekel", email = "shirdekel@yahoo.com.au", role = "ctb"))
+    person("Shir", "Dekel", email = "shirdekel@yahoo.com.au", role = "ctb"),
+    person("Sebastian","Hoyos-Torres",email = "sebtorres7021@gmail.com",role = "aut"))
 Description: Using the bookdown package and LaTeX and Word thesis templates from
     Reed College, this package aims to encourage reproducible research using
     simple Markdown syntax while embedding all of the R code to produce plots
-    and analyses as well.
-Maintainer: Chester Ismay <chester.ismay@gmail.com>
+    and analyses as well. This package works particularly for dissertations for
+    the City University of New York's Graduate Center.
+Maintainer: Sebastian Hoyos-Torres <sebtorres7021@gmail.com>
 Depends:
     R (>= 3.2.0)
 Imports: 
