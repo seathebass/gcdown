@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd via `devtools::build_readme()`. Please edit README.Rmd -->
 
-# thesisdown <img src="man/figures/thesisdown_hex.png" align="right" width=200 />
+# gcdown <img src="man/figures/gc_logo.png" align="right" width=200 />
 
 This project was inspired by the
 [bookdown](https://github.com/rstudio/bookdown) package and is an
@@ -24,14 +24,14 @@ the documentation available in the `gitbook` template at
 
 The current output for the four versions is here:
 
--   [PDF](https://github.com/ismayc/thesisdown_book/blob/master/thesis.pdf)
+  - [PDF](https://github.com/ismayc/thesisdown_book/blob/master/thesis.pdf)
     (Generating LaTeX file is available
     [here](https://github.com/ismayc/thesisdown_book/blob/master/thesis.tex)
     with other files in the [book
     directory](https://github.com/ismayc/thesisdown_book/tree/master).)
--   [Word](https://github.com/ismayc/thesisdown_book/blob/master/thesis.docx)
--   [ePub](https://github.com/ismayc/thesisdown_book/blob/master/thesis.epub)
--   [gitbook](https://ismayc.github.io/thesisdown_book)
+  - [Word](https://github.com/ismayc/thesisdown_book/blob/master/thesis.docx)
+  - [ePub](https://github.com/ismayc/thesisdown_book/blob/master/thesis.epub)
+  - [gitbook](https://ismayc.github.io/thesisdown_book)
 
 Under the hood, the Reed College LaTeX template is used to ensure that
 documents conform precisely to submission standards. At the same time,
@@ -56,10 +56,10 @@ Have you created a thesisdown template for your institution and would
 like to have it included here? Make a PR [similar to the commit done to
 include
 `jayhawkdown`](https://github.com/ismayc/thesisdown/commit/760113a076767cf67b6e22339e398bd3f15305c5).
-I’ll review it and merge it in. Let’s keep the list going!
+I’ll review it and merge it in. Let’s keep the list going\!
 
 | College/University                                          | Repository                                                                                    | Based on                                                        |
-|:------------------------------------------------------------|:----------------------------------------------------------------------------------------------|:----------------------------------------------------------------|
+| :---------------------------------------------------------- | :-------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
 | American University                                         | [SimonHeuberger/eagledown](https://github.com/SimonHeuberger/eagledown)                       | [benmarwick/huskydown](https://github.com/benmarwick/huskydown) |
 | Brock University                                            | [brentthorne/brockdown](https://github.com/brentthorne/brockdown)                             | [zkamvar/beaverdown](https://github.com/zkamvar/beaverdown)     |
 | École Doctorale de Mathématiques Hadamard                   | [abichat/hadamardown](https://github.com/abichat/hadamardown)                                 | [ismayc/thesisdown](https://github.com/ismayc/thesisdown)       |
@@ -72,7 +72,6 @@ I’ll review it and merge it in. Let’s keep the list going!
 | Massachusetts Institute of Technology                       | [ratatstats/manusdown](https://github.com/ratatstats/manusdown)                               | [ismayc/thesisdown](https://github.com/ismayc/thesisdown)       |
 | Oregon State University                                     | [zkamvar/beaverdown](https://github.com/zkamvar/beaverdown)                                   | [ismayc/thesisdown](https://github.com/ismayc/thesisdown)       |
 | Oxford University                                           | [davidplans/oxdown](https://github.com/davidplans/oxdown)                                     | [ismayc/thesisdown](https://github.com/ismayc/thesisdown)       |
-| Queen's University                                          | [eugenesit/gaelsdown](https://github.com/eugenesit/gaelsdown)                                 | [ismayc/thesisdown](https://github.com/ismayc/thesisdown)       |
 | Smith College                                               | [SmithCollege-SDS/pioneerdown](https://github.com/SmithCollege-SDS/pioneerdown)               | [ismayc/thesisdown](https://github.com/ismayc/thesisdown)       |
 | Southampton University                                      | [dr-harper/sotonthesis](https://github.com/dr-harper/sotonthesis)                             | [ismayc/thesisdown](https://github.com/ismayc/thesisdown)       |
 | Stanford University                                         | [mhtess/treedown](https://github.com/mhtess/treedown)                                         | [ismayc/thesisdown](https://github.com/ismayc/thesisdown)       |
@@ -142,7 +141,7 @@ To use {thesisdown} from
     `install.packages("thesisdown")` won’t work. Use
     `remotes::install_github()` as shown below instead to install the
     package.
-
+    
     ``` r
     if (!require("remotes")) 
       install.packages("remotes", repos = "https://cran.rstudio.org")
@@ -156,35 +155,39 @@ the following dialog to show up.
 3.  Get started with the {thesisdown} template. There are two options
     for doing so.
 
--   3a) **RECOMMENDED** Create a new RStudio project with a {thesisdown}
-    template.
+<!-- end list -->
 
-    In RStudio, click on **File** &gt; **New Project** &gt; **New
+  - 3a) **RECOMMENDED** Create a new RStudio project with a {thesisdown}
+    template.
+    
+    In RStudio, click on **File** \> **New Project** \> **New
     Directory**. Then select **Thesis Project using thesisdown** from
     the dropdown that will look something like the image below. You’ll
     see the graduation cap as the icon on the left for the appropriate
     project type.
-
+    
     ![](https://raw.githubusercontent.com/ismayc/thesisdown/master/docs/reference/figures/thesis_proj.png)
-
+    
     Next, give your project a name and specify where you’d like the
     files to appear. In the screenshot below, the project name is
     `my_thesis` and it will appear as a new folder on my Desktop.
-
+    
     ![](https://raw.githubusercontent.com/ismayc/thesisdown/master/docs/reference/figures/thesis_proj_name.png)
-
+    
     If you got this far, skip over step 3b which is the older version of
     getting the template. It might force you to change some of the
     directories to get knitting to work and has some other limitations
     as well. That’s why step 3a is recommended.
 
--   3b) Use the **New R Markdown** dialog to select **Thesis**:
-
+  - 3b) Use the **New R Markdown** dialog to select **Thesis**:
+    
     ![](https://raw.githubusercontent.com/ismayc/thesisdown/master/docs/reference/figures/thesis_rmd.png)
-
+    
     Note that this will currently only **Knit** if you name the
     directory `index` as shown above. This guarantees that `index.html`
     is generated correctly for the Gitbook version of the thesis.
+
+<!-- end list -->
 
 4.  After choosing which type of output you’d like in the YAML at the
     top of `index.Rmd`, **Knit** the `index.Rmd` file to get the book in
@@ -230,8 +233,8 @@ This file contains all the meta information that goes at the beginning
 of your document. You’ll need to edit the top portion of this file (the
 YAML) to put your name on the first page, the title of your thesis, etc.
 Note that you need to have at least one chapter start in the `index.Rmd`
-file for the build to work. For the template, this is done with
-`# Introduction` in the example from the template.
+file for the build to work. For the template, this is done with `#
+Introduction` in the example from the template.
 
 ### `01-chap1.Rmd`, `02-chap2.Rmd`, etc.
 

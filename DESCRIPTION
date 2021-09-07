@@ -1,6 +1,6 @@
 Package: gcdown
 Title: An updated R Markdown Dissertation Template for the CUNY Graduate Center.
-Version: 0.2i.0.9000
+Version: 0.2.0.9000
 Authors@R: c(
     person("Chester", "Ismay", email = "chester.ismay@gmail.com", role = c("cre", "aut")),
     person("Nick", "Solomon", email = "nick@nicksolomon.me", role = "aut"),
