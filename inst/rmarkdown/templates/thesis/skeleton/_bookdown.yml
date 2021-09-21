@@ -1,8 +1,8 @@
 book_filename: "Dissertation"
 chapter_name: "Chapter "
 download: [
-    ["thesis.pdf", "PDF"],
-    ["thesis.epub", "EPUB"],
-    ["thesis.docx", "Word"]
+    ["gcdown.pdf", "PDF"],
+    ["gcdown.epub", "EPUB"],
+    ["gcdown.docx", "Word"]
   ]
 delete_merged_file: true

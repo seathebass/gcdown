@@ -17,9 +17,9 @@
 #'   template
 #' @examples
 #' \dontrun{
-#' output:thesisdown::thesis_pdf
+#' output:gcdown::gc_pdf
 #' }
-thesis_pdf <- function(toc = TRUE, toc_depth = 3, highlight = "default", pandoc_args = NULL, ...) {
+gc_pdf <- function(toc = TRUE, toc_depth = 3, highlight = "default", pandoc_args = NULL, ...) {
   base <- bookdown::pdf_book(
     template = "template.tex",
     toc = toc,
@@ -44,7 +44,7 @@ thesis_pdf <- function(toc = TRUE, toc_depth = 3, highlight = "default", pandoc_
 #' Creates an R Markdown gitbook Thesis document
 #'
 #' This is a function called in output in the YAML of the driver Rmd file
-#' to specify the creation of a webpage version of the thesis.
+#' to specify the creation of a webpage version of the gc.
 #'
 #' @param ... Further arguments passed to or from other methods.
 #'
@@ -52,9 +52,9 @@ thesis_pdf <- function(toc = TRUE, toc_depth = 3, highlight = "default", pandoc_
 #' @return A gitbook webpage
 #' @examples
 #' \dontrun{
-#' output:thesisdown::thesis_gitbook
+#' output:gcdown::gc_gitbook
 #' }
-thesis_gitbook <- function(...) {
+gc_gitbook <- function(...) {
   config_default <- list(
     toc = list(
       collapse = "section",
@@ -102,7 +102,7 @@ thesis_gitbook <- function(...) {
 #' Creates an R Markdown Word Thesis document
 #'
 #' This is a function called in output in the YAML of the driver Rmd file
-#' to specify the creation of a Microsoft Word version of the thesis.
+#' to specify the creation of a Microsoft Word version of the gc.
 #'
 #' @param ... Further arguments passed to or from other methods.
 #'
@@ -111,9 +111,9 @@ thesis_gitbook <- function(...) {
 #' the Reed Senior Thesis Word template
 #' @examples
 #' \dontrun{
-#' output:thesisdown::thesis_word
+#' output:gcdown::gc_word
 #' }
-thesis_word <- function(...) {
+gc_word <- function(...) {
   base <- bookdown::word_document2(...)
 
   # Mostly copied from knitr::render_sweave
@@ -126,17 +126,17 @@ thesis_word <- function(...) {
 #' Creates an R Markdown epub Thesis document
 #'
 #' This is a function called in output in the YAML of the driver Rmd file
-#' to specify the creation of a epub version of the thesis.
+#' to specify the creation of a epub version of the gc.
 #'
 #' @param ... Further arguments passed to or from other methods.
 #'
 #' @export
-#' @return A ebook version of the thesis
+#' @return A ebook version of the gc
 #' @examples
 #' \dontrun{
-#' output:thesisdown::thesis_epub
+#' output:gcdown::gc_epub
 #' }
-thesis_epub <- function(...) {
+gc_epub <- function(...) {
   base <- bookdown::epub_book(...)
 
   # Mostly copied from knitr::render_sweave
