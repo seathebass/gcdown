@@ -10,7 +10,7 @@
 % May 2005 Patrick Carlisle Table of contents chapter definition
 % 2004-2005 Ben Salzberg (BTS) a variety of tweaks here and in the template
 % 2015 Chester Ismay (CII) modified to create R Markdown template
-% 2020 Sebastian Hoyos-Torres (SH) modify CII edits for graduate center rmd template
+% 2021 Sebastian Hoyos-Torres (SH) modify CII edits for graduate center rmd template
 % Oddities:
 %
 %   We *ASSUME* that any time \cleardoublepage is called
@@ -20,11 +20,12 @@
 %  If you use \frontmatter \mainmatter without any chapters inbetween
 %  be prepared to have the page numbering messed up. Not a big deal,
 %  but I'm not sure how to fix it.
-%
-%
-
+%% Preamble
+%%
+%% These have been added at the request of the MIT Libraries, because
+%% some PDF conversions mess up the ligatures.  -LB, 1/22/2014
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{gcdown}[graduate center thesis]
+\ProvidesClass{gcdown}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
 \LoadClass{book}
@@ -296,8 +297,8 @@ by \\[0.5in]
 \textsc{\@author} 
 
 \vspace{\fill}
-A dissertation proposal submitted to the Graduate Faculty in \@department \space in partial fulfillment of the requirements for the degree of \@degree, \@institution \\[0.25in]
-2020
+A dissertation submitted to the Graduate Faculty in \@department \space in partial fulfillment of the requirements for the degree of \@degree, \@institution \\[0.25in]
+\@year
 
 \end{center}
 
@@ -307,7 +308,7 @@ A dissertation proposal submitted to the Graduate Faculty in \@department \space
 \frontmatter
   {\fontsize{12}{14}
   \begin{center}
-This manuscript has been read and accepted by the Graduate Faculty in \@department \space in satisfaction of the dissertation proposal requirement for the degree of \@degree.
+This manuscript has been read and accepted by the Graduate Faculty in \@department \space in satisfaction of the dissertation requirement for the degree of \@degree.
   \end{center}
   \vspace{0.75in}
 
@@ -317,7 +318,7 @@ This manuscript has been read and accepted by the Graduate Faculty in \@departme
 \hrulefill                          & &\hrulefill \\
 Date                                & & Chair of Examining Committee\\
 ~                                   & & \\
-~                                   & & \textbf{Deborah Koetzle}\\
+~                                   & & \textbf{\@executive}\\
 ~                                   & & \\
 \hrulefill                          & &\hrulefill \\
 Date                                & & Executive Officer\\
