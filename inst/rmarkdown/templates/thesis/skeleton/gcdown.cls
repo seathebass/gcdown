@@ -271,14 +271,6 @@
 }{\clearpage \if@restonecol\twocolumn\fi}%
 
 
-\ifx\@pdfoutput\@undefined
-  \newcommand{\RTpercent}{\@percentchar\space}
-  \AtBeginDvi{\special{!\RTpercent Reed College LaTeX Thesis Class 2001/12/04 SN}}
-  \AtBeginDvi{\special{rawpostscript \RTpercent Reed College LaTeX Thesis Class 2001/12/04 SN}}
-\else
-  \AtEndDocument{\pdfinfo{/Creator	(Reed College LaTeX Thesis Class 2001/12/04 SN)}}
-\fi
-
 % I hacked the title page to all be the same font size
 % as requested by the library, BTS 2005
 
@@ -335,7 +327,7 @@ Supervisory Committee \\
   \phantom{}\vspace{\fill}
   \pagestyle{empty}
 \begin{center}
-\copyright~2020\\
+\copyright~\@year\\
 \textsc{\@author}\\
 All Rights Reserved\\
 \end{center}
