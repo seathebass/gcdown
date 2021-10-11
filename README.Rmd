@@ -58,7 +58,7 @@ If you are new to working with `bookdown`/`rmarkdown`, please read over the docu
 |University of Bristol                                 |[mattlee821/bristolthesis](https://github.com/mattlee821/bristolthesis)                               |[ismayc/thesisdown](https://github.com/ismayc/thesisdown)       |
 |Universidade Federal de Santa Catarina  | [lfpdroubi/ufscdown](https://github.com/lfpdroubi/ufscdown)                                  |[ismayc/thesisdown](https://github.com/ismayc/thesisdown)       |
 |Universiteit van Amsterdam              | [lcreteig/amsterdown](https://github.com/lcreteig/amsterdown)                                |[benmarwick/huskydown](https://github.com/benmarwick/huskydown) |
-|City University of New York Graduate Center | [seathebass/gcdown](https://github.com/seathebass/gcdown) |
+|City University of New York Graduate Center | [seathebass/gcdown](https://github.com/seathebass/gcdown)                                |[ismayc/thesisdown](https://github.com/ismayc/thesisdown)]
 
 ### Using thesisdown from Chester's GitHub
 

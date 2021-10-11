@@ -7,7 +7,6 @@ gcdown_file <- function(...) {
 gcdown_skeleton <- function(path = getwd()) {
 
   # ensure directory exists
-  #  dir.create(path, recursive = TRUE, showWarnings = FALSE)
 
   # copy 'resources' folder to path
   resources <- gcdown_file("rstudio", "templates", "project", "resources")

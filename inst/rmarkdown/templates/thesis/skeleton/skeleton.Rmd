@@ -25,7 +25,7 @@ params:
 # Remove the hashtag to specify which version of output you would like.
 # Can only choose one at a time.
 output:
-  thesisdown::thesis_pdf: default 
+  gcdown::thesis_pdf: default 
 #  thesisdown::thesis_gitbook: default         
 #  thesisdown::thesis_word: default
 #  thesisdown::thesis_epub: default
@@ -43,7 +43,7 @@ acknowledgements: |
 dedication: |
   You can have a dedication here if you wish. 
 preface: |
-  This is an example of a thesis setup to use the reed thesis document class 
+  This is an example of a thesis setup to use the graduate center document class 
   (for LaTeX) and the R bookdown package, in general.
   
 # Specify the location of the bibliography below
@@ -109,11 +109,9 @@ Alternatively, you can put that content in files like 00--prelim.Rmd and
 
 
 ```{r eval=!knitr::is_latex_output(), child=here::here("prelims", "00--prelim.Rmd")}
-
 ```
 
 ```{r eval=!knitr::is_latex_output(), child=here::here("prelims", "00-abstract.Rmd")}
-
 ```
 
 <!-- The {.unnumbered} option here means that the introduction will be 
